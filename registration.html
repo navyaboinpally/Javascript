@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registration Form</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<style>	
+			.text1
+			{
+				color:red;
+			}
+			.text2
+			{
+				color:green;
+			}
+		</style>
+		
+		<script>
+			$(document).ready(function(){
+				$("#reg").submit(function(e){
+					e.preventDefault();
+					var fullname=$("#fname").val();
+					var mobilenumber=$("#number").val();
+					var email=$("#email").val();
+					var password=$("#pass").val();
+					var cpassword=$("#pass1").val();				
+					if(fullname=="")
+					{
+						$("#msg5").html("Enter Your Full Name");
+					}				
+					else if(mobilenumber=="")
+					{
+						$("#msg5").html("Enter Your Mobile Number");
+					}				
+					else if(email=="")
+					{
+						$("#msg5").html("Enter Your email");
+					}				
+					else if(password=="")
+					{
+						$("#msg5").html("Enter Your password");
+					}				
+					else if(cpassword=="")
+					{
+						$("#msg5").html("Enter Confirm password");
+					}
+					else
+					{
+						$("#msg5").html("Success");
+					}	
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="jumbotron div1">
+				<form action="" id="reg" class="form-vertical">
+					<div class="form-group">
+						<label>Full Name:</label>
+						<input type="text" class="form-control" id="fname">
+						<p id="msg"></p>
+					</div>
+					<div class="form-group">
+						<label>Mobile Number:</label>
+						<input type="number" class="form-control" id="number">
+						<p id="msg1"></p>
+					</div>
+					<div class="form-group">
+						<label>Email:</label>
+						<input type="email" class="form-control" id="email">
+						<p id="msg2"></p>
+					</div>
+					<div class="form-group">
+						<label>Password:</label>
+						<input type="password" class="form-control" id="pass">
+						<p id="msg3"></p>
+					</div>
+					<div class="form-group">
+						<label>Confirm Password:</label>
+						<input type="password" class="form-control" id="pass1">
+						<p id="msg4"></p>
+					</div>
+					<div class="form-group">
+						<input type="submit"    class="btn btn-success">
+						
+					</div>
+					<p id="msg5"></p>
+				</form>
+			</div>
+		
+		</div>
+	</body>
+</html>
